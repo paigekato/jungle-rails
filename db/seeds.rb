@@ -29,6 +29,20 @@ cat1 = Category.find_or_create_by! name: 'Apparel'
 cat2 = Category.find_or_create_by! name: 'Electronics'
 cat3 = Category.find_or_create_by! name: 'Furniture'
 
+## REVIEWS
+
+puts "Finding Humans to Make Falsey Reviews ..."
+
+Review.create(product_id: 1, user_id: 1, description: "Great product. Can't belive I wasted all the money. 10/10 Would buy again.", rating: 4 )
+Review.create(product_id: 1, user_id: 1, description: "Best thing ever Looking trendy and feeling good.", rating: 3 )
+Review.create(product_id: 4, user_id: 2, description: "Best garbage I ever bought. So chill.", rating: 3 )
+Review.create(product_id: 3, user_id: 1, description: "Perfect for anyone who wants to be a Hipster.", rating: 5)
+
+#USER
+User.destroy_all
+
+User.create(name: "Paige", email: "paigekato@gmail.com", password_digest: "$2a$10$PXM5K0f3I0aoMj0.7xH2nerudqtWb0sxAer8Em.N2cmCsFI6z627K")
+
 ## PRODUCTS
 
 puts "Re-creating Products ..."
@@ -113,14 +127,14 @@ cat3.products.create!({
   description: Faker::Hipster.paragraph(4),
   image: open_asset('furniture1.jpg'),
   quantity: 320,
-  price: 3_052.00
+  price: 35_052.00
 })
 
 cat3.products.create!({
   name:  'Electric Chair',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('furniture2.jpg'),
-  quantity: 2,
+  quantity: 22,
   price: 987.65
 })
 
