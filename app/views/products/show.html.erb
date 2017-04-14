@@ -26,8 +26,6 @@
       </div>
     </div>
 
-
-
     <% @reviews.each do |review| %>
       <%= render 'rating', rating: review.rating, description: review.description, user: review.user_id %>
     <% end %>

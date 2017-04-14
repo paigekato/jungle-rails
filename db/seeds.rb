@@ -38,6 +38,11 @@ Review.create(product_id: 1, user_id: 1, description: "Best thing ever Looking t
 Review.create(product_id: 4, user_id: 2, description: "Best garbage I ever bought. So chill.", rating: 3 )
 Review.create(product_id: 3, user_id: 1, description: "Perfect for anyone who wants to be a Hipster.", rating: 5)
 
+#USER
+User.destroy_all
+
+User.create(name: "Paige", email: "paigekato@gmail.com", password_digest: "$2a$10$PXM5K0f3I0aoMj0.7xH2nerudqtWb0sxAer8Em.N2cmCsFI6z627K")
+
 ## PRODUCTS
 
 puts "Re-creating Products ..."
