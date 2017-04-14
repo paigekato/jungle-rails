@@ -2,10 +2,11 @@ class UserMailer < ApplicationMailer
 
   default from: "paigekato@hotmail.com"
 
-  def confirmation_email(order, user)
+  def confirmation_email(user, order)
+    email = user.email
     @order = order
-    @user = user.name
-    mail(to: @order.email, subject: 'Order Confirmation')
+    @name = user.name
+    mail(to: email, subject: 'Order Confirmation')
   end
 
 end
