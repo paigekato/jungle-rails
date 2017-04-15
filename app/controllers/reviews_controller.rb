@@ -7,13 +7,14 @@ class ReviewsController < ApplicationController
     if review.save
       review.save
       redirect_to "/products/#{params[:product_id]}"
-  else
+     else
     redirect_to "/products/#{params[:product_id]}"
+    end
   end
-end
 
   private
     def review_params
       params.require(:review).permit(:rating, :description)
     end
+
 end
