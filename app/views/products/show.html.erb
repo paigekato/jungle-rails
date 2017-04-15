@@ -1,18 +1,13 @@
 <section class="products-show">
-
   <header class="page-header">
     <%= link_to @product.category.name, @product.category %>
     <h1><%= @product.name %></h1>
   </header>
-
   <article class="product-detail">
-
     <div class="row">
-
       <div class="col-sm-4">
         <%= image_tag @product.image.url, class: 'main-img' %>
       </div>
-
       <div class="col-sm-8">
         <dl class="dl-horizontal">
           <dt>Name</dt>
@@ -23,36 +18,20 @@
             <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
             <dd><%= @product.price %></dd><br/>
+          <% if @average.to_i == 0 %>
+          This product has not been rated yet.
+          <% else %>
           <h4><dt>Product Rating</dt>
-            <dd><%= @average %> out of 5</dd></h4>
+            <dd><%= @average.to_i %> out of 5</dd></h4>
+          <% end %>
         </dl>
       </div>
     </div>
-
-    <br/><br/>
-    <% if current_user %>
-      <h2>Leave a Review:</h2>
-        <%= form_for :review, url: "#{@product.id}/reviews" do |f| %>
-        <textarea class="form-control" rows="3" <%= f.text_area :description %><br/></textarea>
-        <div class="dropdown">
-
-         <%= f.select :rating, [1, 2, 3, 4, 5] %><br/><br/>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-10">
-          <button type="submit" class="btn btn-default"<%= f.submit "Submit" %>Sumbit Review</button>
-          </div>
-        </div>
-      <% end %>
-      <% else %>
-    <% end %>
+    <%= render 'review' %>
     <h3 class="page-header"> Reviews: </h3>
     <br/>
-
     <% @reviews.each do |review| %>
       <%= render 'rating', rating: review.rating, description: review.description, user: review.user_id, user: review.user.name, created_at: review.created_at  %>
     <% end %>
-
   </article>
-
 </section>

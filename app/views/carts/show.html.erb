@@ -1,15 +1,12 @@
 <section class="cart-show">
 <% if cart.size == 0 %>
-
 <h1>Your cart is empty.</h1>
 <br/>
 <%= link_to 'Return Home to Continue Shopping.', :root %>
-
 <% else %>
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
-
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -33,7 +30,6 @@
           </th>
           <th>
             <%= @cart_total %>
-
           </th>
         </tr>
       </tfoot>

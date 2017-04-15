@@ -1,9 +1,7 @@
 <section class="orders-show">
-
   <header class="page-header">
     <h1>Order #<%= @order.id %></h1>
   </header>
-
     <div class="order-summary jumbotron">
       <h4>Thank you for your order <%= current_user.name %>! <br/><br/>
       <% line_items = LineItem.where(order_id: @order.id) %>
@@ -14,7 +12,5 @@
         An email has been send to <%= current_user.email %>. <br/>
       </h4>
   </div>
-
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
-
 </section>

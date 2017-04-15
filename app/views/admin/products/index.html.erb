@@ -1,15 +1,11 @@
 <section class="admin-products-index">
-
   <header class="page-header">
     <h1>Admin - All Products</h1>
   </header>
-
   <div class="well">
     <%= link_to '+ New Product', [:new, :admin, :product], class: 'btn btn-info' %>
   </div>
-
   <div class="panel panel-default products">
-
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -24,7 +20,5 @@
         <%= render @products %>
       </tbody>
     </table>
-
   </div>
-
 </section>
