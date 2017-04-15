@@ -26,21 +26,25 @@
       </div>
     </div>
 
-    <% @reviews.each do |review| %>
-      <%= render 'rating', rating: review.rating, description: review.description, user: review.user_id, user: review.user.name  %>
-
-    <% end %>
     <br/><br/>
     <% if current_user %>
       <h2>Leave a Review:</h2>
         <%= form_for :review, url: "#{@product.id}/reviews" do |f| %>
-        <%= f.label :review %><br/>
-        <%= f.text_area :description %><br/>
-        <%= f.select :rating, [1, 2, 3, 4, 5, 6] %><br/>
-        <%= f.submit %><br/>
+        <textarea class="form-control" rows="3" <%= f.text_area :description %><br/></textarea>
+        <%= f.select :rating, [1, 2, 3, 4, 5] %><br/><br/>
+        <div class="form-group">
+          <div class="col-sm-10">
+          <button type="submit" class="btn btn-default"<%= f.submit "Submit" %>Sumbit Review</button>
+          </div>
+        </div>
       <% end %>
       <% else %>
+    <% end %>
+    <h3 class="page-header"> Reviews: </h3>
+    <br/>
 
+    <% @reviews.each do |review| %>
+      <%= render 'rating', rating: review.rating, description: review.description, user: review.user_id, user: review.user.name, created_at: review.created_at  %>
     <% end %>
 
   </article>
