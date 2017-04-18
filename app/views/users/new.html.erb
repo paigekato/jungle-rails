@@ -1,4 +1,11 @@
 <h1 class="page-header">Signup</h1>
+
+<% if flash[:alert] %>
+  <div class="alert alert-warning" role="alert">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+
 <%= form_for :user, url: '/users' do |f| %>
 <form class="form-horizontal">
   <div class="form-group">
