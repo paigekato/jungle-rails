@@ -2,6 +2,8 @@
 
 A mini e-commerce application built with Rails 4.2. Learned how to navaigate existing code-bases and implement new features with an unfamiliar language. Applied previous research tactics to become familiar with new paradigms, language and frameworks. Able to implement features without thorough explanation. simulating real world situations.
 
+https://jungle-app.herokuapp.com/
+
 Implemented the following features for Jungle:
 
 * Sold Out Badge: Implemented boolean function to display badge when inventory 0.
