@@ -66,12 +66,21 @@ RSpec.describe User, type: :model do
         )
       expect(user).to_not be_valid
     end
-
-
-
   end
-end
 
+  describe '.authenticate_with_credentials' do
+    user = User.create(
+      name: "paige",
+      email: "paigekato@gmail.com",
+      password: "asssh",
+      password_confirmation: "asssh"
+      )
+    authenticate = User.authenticate_with_credentials(user.email, user.password)
+    expect(authenticate).to_not be_valid
+    end
+  end
+
+end
 
 #mut be craeted with password/password_confirmation fields
 #example for where they are not the same
