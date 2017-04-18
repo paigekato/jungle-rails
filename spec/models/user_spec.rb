@@ -69,7 +69,6 @@ RSpec.describe User, type: :model do
   end
 
   describe '.authenticate_with_credentials' do
-    it 'should create valid user with authentication' do
     user = User.create(
       name: "paige",
       email: "paigekato@gmail.com",
