@@ -23,7 +23,6 @@ RSpec.describe User, type: :model do
       expect(user).to_not (be_valid)
     end
 
-
     it 'should not save without unique email' do
       @user = User.create(
         name: "Paige",
@@ -79,19 +78,4 @@ RSpec.describe User, type: :model do
     expect(authenticate).to_not be_valid
     end
   end
-
 end
-
-#mut be craeted with password/password_confirmation fields
-#example for where they are not the same
-#also require for creating model so cannot create without valid matching pass
-#emails must be unique and not case senstive
-#email first name and last name are required
-
-  # create_table "users", force: :cascade do |t|
-  #   t.string   "name"
-  #   t.string   "email"
-  #   t.string   "password_digest"
-  #   t.datetime "created_at",      null: false
-  #   t.datetime "updated_at",      null: false
-  #   t.boolean  "email_confirmed"
