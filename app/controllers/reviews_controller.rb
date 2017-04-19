@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
       review.save
       redirect_to "/products/#{params[:product_id]}"
      else
-    redirect_to "/products/#{params[:product_id]}"
+      redirect_to "/products/#{params[:product_id]}"
     end
   end
 
